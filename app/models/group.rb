@@ -3,4 +3,6 @@ class Group < ApplicationRecord
   has_many :group_expenses, dependent: :destroy
   has_many :expenses, through: :group_expenses
 
+  validates :name, presence: true, length: { in: 1..20 }
+  validates :icon, presence: true, length: { in: 1..100 }
 end
