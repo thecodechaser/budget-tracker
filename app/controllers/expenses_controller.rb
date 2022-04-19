@@ -13,7 +13,7 @@ class ExpensesController < ApplicationController
   end
 
   def create
-    @new_expense = current_user.expense.new(expense_params)
+    @new_expense = current_user.expenses.new(expense_params)
     if @new_expense.save
       GroupExpense.create(group_id: params[:group_id], expense_id: @new_expense.id)
       redirect_to group_expenses_path(params[:group_id]), flash: { alert: 'Your transaction is registered' }
@@ -23,6 +23,6 @@ class ExpensesController < ApplicationController
   end
 
   def expense_params
-    params.require(:group).permit(:name, :amount)
+    params.require(:expense).permit(:name, :amount)
   end
 end

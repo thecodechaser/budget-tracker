@@ -1,0 +1,17 @@
+<div class="flex flex-col items-center my-20">
+  <h3 class="text-sky-400 text-xl font-bold mb-6"> Add a new transaction</h3>
+  <%= form_with url: group_expenses_path(params[:group_id]), scope: :expense do |form| %>
+    <div>
+    <%= form.label :Name %><br>
+    <%= form.text_field :name, class: 'mt-2 w-56 p-1 rounded', require: true %>
+    </div>
+
+    <div class="mt-2">
+    <%= form.label :amount %><br>
+    <%= form.number_field :amount, class: 'mt-2 w-56 p-1 rounded', require: true %>
+    </div>
+
+    <%= form.submit "Submit", class: "bg-sky-400 p-2 rounded text-slate-50 mt-4" %>
+    <%= link_to 'Back', group_expenses_path(params[:group_id]), class: "bg-sky-400 rounded text-slate-50 mt-4 ml-20 px-4 py-2" %>
+  <% end %>
+</div>
