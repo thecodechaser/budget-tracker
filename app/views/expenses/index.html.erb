@@ -1,21 +1,23 @@
-<div class="flex flex-col items-center">
+<div class="flex flex-col items-center mb-6">
 
   <div class="flex">
     <%= image_tag @group.icon, alt: 'icon', class: "w-40" %>
     <p><%= @group.name %></p>
   </div>
 
-  <div>
+  <div class="mt-6">
     <p>Transaction pizza </p>
-    <div>
-      <%= image_tag ('calendar-icon.png'), alt: 'icon', class: "w-40" %>
+    <div class="flex mt-4 gap-2">
+      <%= image_tag ('calender-icon.png'), class: "w-5" %>
       <p>2022-04-2022</p>
     </div>
 
-    <div>
-    <p>Payment</p>
-    <p>$170</p>
+    <div class="flex mt-4 justify-between">
+      <p>Payment</p>
+      <p>$170</p>
   </div>
   </div>
+
+  <%= link_to 'Add new transaction', new_group_expense_path, class: "bg-sky-400 p-2 rounded text-slate-50 mt-6" %>
 
 </div>
