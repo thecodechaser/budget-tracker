@@ -16,12 +16,17 @@
 
     <%= yield %>
 
-    <div class="session-msg"> 
+    <div class="flex justify-center font-bold"> 
       <% if user_signed_in? %> 
-        Signed in as <%= current_user.name %>. This cannot be cheese?&nbsp; <%= link_to "Sign out", destroy_user_session_path, :method => :delete, class: "sign-out-btn" %> 
-      <% else %> 
-        <%= link_to 'Register', new_user_registration_path, class: "sign-out-btn" %> &nbsp;or&nbsp; <%= link_to 'Sign in', new_user_session_path, class: "sign-out-btn"%> 
-      <% end %> 
+      <div>
+        Signed in as <%= current_user.name %>. This cannot be cheese?&nbsp; <%= link_to "Sign out", destroy_user_session_path, :method => :delete, class: "bg-sky-400 p-2 rounded" %> 
+     </div>
+        <% else %> 
+        <div>
+        <%= link_to 'Register', new_user_registration_path, class: "bg-sky-400 p-2 rounded text-slate-50" %> &nbsp;or&nbsp; <%= link_to 'Sign in', new_user_session_path, class: "bg-sky-400 p-2 rounded text-slate-50"%> 
+        </div>
+        <% end %> 
+      
     </div> 
     
   </body>
