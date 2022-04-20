@@ -2,6 +2,15 @@ class GroupsController < ApplicationController
 
   def index
     @groups = current_user.groups.all
+    @total_amount = []
+
+    @groups.each do |group| 
+      total =0;
+      group.group_expenses.each do |group_expense|
+        total +=group_expense.expense.amount
+      end
+      @total_amount.push(total)
+    end
   end
 
   def new

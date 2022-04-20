@@ -5,18 +5,22 @@
     <p><%= @group.name %></p>
   </div>
 
+  <p>Total Payment <%= @total_amount %></p>
+
+  <% @expenses.each do |expense| %>
   <div class="mt-6">
-    <p>Transaction pizza </p>
+    <p>Transaction <%= expense.name %> </p>
     <div class="flex mt-4 gap-2">
       <%= image_tag ('calender-icon.png'), class: "w-5" %>
-      <p>2022-04-2022</p>
+      <p><%= expense.created_at.strftime('%d %h %Y') %></p>
     </div>
 
     <div class="flex mt-4 justify-between">
       <p>Payment</p>
-      <p>$170</p>
+      <p>$<%= expense.amount %></p>
   </div>
   </div>
+  <% end %>
 
   <%= link_to 'Add new transaction', new_group_expense_path, class: "bg-sky-400 p-2 rounded text-slate-50 mt-6" %>
 

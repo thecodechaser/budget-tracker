@@ -1,16 +1,16 @@
 
 <div class="flex flex-col items-center my-10">
 
-  <% @groups.each do |group| %>
+  <% @groups.each_with_index do |group, index| %>
     <div class="flex bg-slate-50 group-card rounded p-4 mt-4">
       <%= image_tag group.icon, alt: 'icon', class: "w-40" %>
 
       <div class="ml-5">
         <p><%= group.name %></p>
-        <p class="mt-14"><%= group.created_at.strftime('%d %B %Y') %></p>
+        <p class="mt-14"><%= group.created_at.strftime('%d %h %Y') %></p>
       </div>
 
-      <p class="ml-12">$14.0 </p>
+      <p class="ml-12">$<%= @total_amount[index] %> </p>
     </div>
   <% end %>
 
