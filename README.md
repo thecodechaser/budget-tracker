@@ -1,6 +1,6 @@
 ![](https://img.shields.io/badge/thecodechaser-blueviolet)
 
-# Recipe-App
+# Budget Tracker App
 
 > The Budget tracker app is a full stack application. It's a functional website that shows the list of categories and transactions and empower readers to interact with them by adding new categories and transactions. Users can access the services of the application by creating a new account or by login in if they already have account.
 
