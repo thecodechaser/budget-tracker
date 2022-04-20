@@ -1,8 +1,9 @@
 
-<div class="flex flex-col items-center my-10">
-
+<div class="flex flex-col items-center mb-10">
+<%= render "header" %>
   <% @groups.each_with_index do |group, index| %>
-    <div class="flex bg-slate-50 group-card rounded p-4 mt-4 w-96">
+    <%= link_to group_expenses_path(group.id), class: do %>
+    <div class="flex bg-slate-50 group-card rounded p-4 mb-4 w-96">
       <%= image_tag group.icon, alt: 'icon', class: "w-28" %>
 
       <div class="ml-5 grow text-gray-500 font-medium">
@@ -12,6 +13,7 @@
 
       <p class="ml-16 grow-0 font-semibold">$<%= @total_amount[index] %> </p>
     </div>
+    <% end %>
   <% end %>
 
   <%= link_to 'Add new category', new_group_path, class: "bg-sky-400 p-2 rounded text-slate-50 mt-6" %>
