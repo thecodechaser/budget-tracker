@@ -18,7 +18,7 @@ RSpec.describe 'expenses#index', type: :feature do
       @expense3 = Expense.create(user: @user, name: 'Drink', amount: 5)
       @expense4 = Expense.create(user: @user, name: 'Oil', amount: 5)
 
-      @group_expense =  GroupExpense.create(group: @group, expense: @expense1)
+      @group_expense = GroupExpense.create(group: @group, expense: @expense1)
 
       visit(group_expenses_path(@group.id))
     end
@@ -30,7 +30,5 @@ RSpec.describe 'expenses#index', type: :feature do
     it 'shows the expense amount' do
       expect(page).to have_content('5')
     end
-
-    
   end
 end

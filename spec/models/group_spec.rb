@@ -23,8 +23,12 @@ RSpec.describe Group, type: :model do
       expect(subject).to_not be_valid
     end
 
-    it 'check if the icon is not exceeding 20 characters' do
+    it 'check if the icon is not exceeding 300 characters' do
       subject.icon = 'Hello world Hello world Hello world Hello world Hello world Hello world
+      Hello world Hello world Hello world Hello world Hello world Hello world
+      Hello world Hello world Hello world Hello world Hello world Hello world
+      Hello world Hello world Hello world Hello world Hello world Hello world
+      Hello world Hello world Hello world Hello world Hello world Hello world
       Hello world Hello world Hello world Hello world Hello world Hello world'
       expect(subject).to_not be_valid
     end
