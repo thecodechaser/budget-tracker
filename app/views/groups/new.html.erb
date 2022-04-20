@@ -1,5 +1,12 @@
 <div class="flex flex-col items-center mb-20">
-<%= render "header" %>
+<div class="flex justify-between w-96 bg-sky-500 p-4 text-slate-50">
+  <%= image_tag ('hamburger-icon.png'), class: "w-8 h-8" %>
+  <div>
+    <h3>TRANSACTIONS</h3>
+    <p class="text-sm ml-8 mt-5">CREATE</p>
+  </div>
+  <%= image_tag ('search-icon.png'), class: "w-8 h-8" %>
+</div>
   <h3 class="text-sky-400 text-xl mt-4 font-bold mb-6"> Add a new category</h3>
   <%= form_with url: groups_path, scope: :group do |form| %>
     <div>
