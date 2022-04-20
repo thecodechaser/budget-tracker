@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>BudgetTracker</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+
+  <body class="bg-slate-200">
+
+  <div class="mt-2 ml-4 text-sky-400 font-bold text-lg">
+      <p><%= notice %></p>
+       <p><%= alert %></p>
+       </div>
+
+    <%= yield %>
+
+    <div class="flex justify-center mb-6"> 
+      <% if user_signed_in? %> 
+      <div>
+        Signed in as <%= current_user.name %>. This cannot be cheese?&nbsp; <%= link_to "Sign out", destroy_user_session_path, :method => :delete, class: "bg-sky-400 p-2 rounded text-slate-50" %> 
+     </div>
+        <% else %> 
+        <div>
+        <%= link_to 'Register', new_user_registration_path, class: "bg-sky-400 p-2 rounded text-slate-50" %> &nbsp;or&nbsp; <%= link_to 'Sign in', new_user_session_path, class: "bg-sky-400 p-2 rounded text-slate-50"%> 
+        </div>
+        <% end %> 
+      
+    </div> 
+    
+  </body>
+</html>
