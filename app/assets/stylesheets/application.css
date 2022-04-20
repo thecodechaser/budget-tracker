@@ -14,6 +14,12 @@
  *= require_self
  */
 
+ @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+ body {
+  font-family: 'Roboto', sans-serif;
+ }
+
  .group-card {
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   transition: 0.3s;

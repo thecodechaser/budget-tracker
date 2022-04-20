@@ -5,7 +5,7 @@ class ExpensesController < ApplicationController
     @group = Group.find(params[:group_id])
     @expenses = []
     @total_amount = 0
-    @group.group_expenses.each do |group_expense|
+    @group.group_expenses.order(created_at: :desc).each do |group_expense|
       @expenses.push(group_expense.expense)
       @total_amount += group_expense.expense.amount
     end
