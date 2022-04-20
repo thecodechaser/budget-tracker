@@ -11,7 +11,7 @@ RSpec.describe 'groups#index', type: :feature do
       fill_in 'Password', with: 'password'
       click_button 'Log in'
 
-      @group1 = Group.new(user: @user, name: 'Cars', icon: 'icon-link')
+      @group1 = Group.create(user: @user, name: 'Cars', icon: 'https://icon-link')
       @group2 = Group.new(user: @user, name: 'Foods', icon: 'icon-link')
       @group3 = Group.new(user: @user, name: 'Drinks', icon: 'icon-link')
       @group4 = Group.new(user: @user, name: 'Grocery', icon: 'icon-link')
@@ -20,7 +20,11 @@ RSpec.describe 'groups#index', type: :feature do
     end
 
     it 'shows the group name' do
-      expect(page).to have_content('TRANSACTIONS')
+      expect(page).to have_content('Cars')
+    end
+
+    it 'shows the group icon' do
+      expect(page).to have_content('recent')
     end
   end
 end
